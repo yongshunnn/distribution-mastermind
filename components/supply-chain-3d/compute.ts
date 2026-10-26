@@ -1,5 +1,5 @@
-import { chainLayers, playEconomics, type ChainLayer, type PlayInputs } from '@/lib/calc/play';
-import { calc, leaf, type Traced } from '@/lib/calc/traced';
+import { CHAIN_STAGES, chainLayers, playEconomics, type ChainLayer, type ChainStage, type PlayInputs } from '@/lib/calc/play';
+import { calc, leaf, sum, type Traced } from '@/lib/calc/traced';
 import type { Branch, UnitMode } from './types';
 
 export interface SliderState {
@@ -16,6 +16,8 @@ export interface BranchModel {
   stock: Traced;
   shelf: Traced;
   C: Traced;
+  /** Per-stage total of the layers added there (what tapping a mockup shows). */
+  stageTotals: Partial<Record<ChainStage, Traced>>;
 }
 
 function scaleFactor(b: Branch, mode: UnitMode): Traced | null {
@@ -44,9 +46,18 @@ export function modelBranch(b: Branch, s: SliderState, mode: UnitMode): BranchMo
   const cur = b.ctx.currency;
   const scale = (t: Traced): Traced =>
     f ? calc(t.key, t.value * f.value, `${cur}${UNIT_SUFFIX[mode]}`, `${t.label ?? t.key} × ${f.label}`, [t, f], { label: t.label, meaning: t.meaning }) : t;
+  const layers = chainLayers(e, i, b.ctx).map((l) => ({ ...l, t: scale(l.t) }));
+  const stageTotals: Partial<Record<ChainStage, Traced>> = {};
+  for (const stage of CHAIN_STAGES) {
+    const parts = layers.filter((l) => l.stage === stage).map((l) => l.t);
+    stageTotals[stage] = parts.length
+      ? sum(`stage_${stage}`, parts[0].unit, parts, { label: `${stage} — added at this stage`, meaning: `Everything added to the price of one unit at the ${stage.toLowerCase()} stage of the ${b.channel} route.` })
+      : leaf(`stage_${stage}`, 0, `${cur}${UNIT_SUFFIX[mode]}`, { tag: 'computed', label: `${stage} — added at this stage`, meaning: 'Nothing is added to the unit price at this stage for this route.' });
+  }
   return {
     branch: b,
-    layers: chainLayers(e, i, b.ctx).map((l) => ({ ...l, t: scale(l.t) })),
+    stageTotals,
+    layers,
     volume: i.q_realistic_month,
     stock: i.stock_days,
     shelf: scale(i.shelf_price),

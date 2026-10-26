@@ -9,6 +9,11 @@ export interface Branch {
   ctx: PlayContext;
   unitsPerCarton: number;
   sizeLitres: number;
+  /** How the main freight leg moves (drives the 3D mockup). */
+  freight: 'truck' | 'ship' | 'plane';
+  channelType: string;
+  /** Food-service outlets show a stall; retail outlets a shop. */
+  outletKind: 'food' | 'shop';
 }
 
 export type UnitMode = 'unit' | 'litre' | 'carton' | 'm3';

@@ -5,6 +5,8 @@ import { useEffect, useMemo, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { leaf, type Traced } from '@/lib/calc/traced';
 import { KIND_LABEL, LAYER_COLOR } from '@/lib/layers';
+import { CHAIN_STAGES } from '@/lib/calc/play';
+import { Factory, Landmark, Plane, Ship, Store, Truck, User, UtensilsCrossed, Warehouse, type LucideIcon } from 'lucide-react';
 import { ExplainCard } from '../explain-card';
 import { Num } from '../num';
 import { Waterfall } from '../waterfall';
@@ -90,6 +92,8 @@ export function SupplyChainView({ branches }: { branches: Branch[] }) {
         </fieldset>
       ) : null}
 
+      <StageStrip branches={shown} />
+
       {mode === '3d' ? (
         <div className="h-[60vh] min-h-80 overflow-hidden rounded-xl border border-border bg-card" aria-label="3D supply chain. Tap a layer, tube or footprint for its explanation. The same values are listed below.">
           <ChainScene models={models} onSelect={setSelected} reducedMotion={reducedMotion} />
@@ -100,7 +104,7 @@ export function SupplyChainView({ branches }: { branches: Branch[] }) {
         {(Object.keys(KIND_LABEL) as (keyof typeof KIND_LABEL)[]).filter((k) => k !== 'retail_margin').map((k) => (
           <span key={k} className="flex items-center gap-1"><span className="size-3 rounded-sm" style={{ background: LAYER_COLOR[k] }} aria-hidden="true" />{KIND_LABEL[k]}</span>
         ))}
-        <span className="text-muted-foreground">Tube thickness = monthly volume · footprint = stock days</span>
+        <span className="text-muted-foreground">Tube thickness = monthly volume · footprint = stock days · tap a building or vehicle for the cost added at that stage</span>
       </div>
 
       <section className="rounded-xl border border-border bg-card p-4" aria-label="Sliders">
@@ -147,6 +151,38 @@ export function SupplyChainView({ branches }: { branches: Branch[] }) {
         </Dialog.Portal>
       </Dialog.Root>
     </div>
+  );
+}
+
+/** Icon strip naming each stage of the chain (shown in both 2D and 3D views). */
+function StageStrip({ branches }: { branches: Branch[] }) {
+  const freight = new Set(branches.map((b) => b.freight));
+  const food = branches.some((b) => b.outletKind === 'food');
+  const icons: Record<string, LucideIcon[]> = {
+    Production: [Factory],
+    'Origin logistics': [Truck],
+    'Main freight': [...(freight.has('ship') ? [Ship] : []), ...(freight.has('plane') ? [Plane] : []), ...(freight.has('truck') ? [Truck] : [])],
+    Import: [Landmark],
+    Warehouse: [Warehouse],
+    'Delivery to channel': [Truck],
+    Channel: [Store],
+    'Outlet / end user': food ? [UtensilsCrossed, Store] : [Store],
+    Consumer: [User],
+  };
+  return (
+    <ol className="-mx-4 flex gap-1 overflow-x-auto px-4 pb-1" aria-label="Supply-chain stages" data-testid="stage-strip">
+      {CHAIN_STAGES.map((stage, i) => (
+        <li key={stage} className="flex shrink-0 items-center gap-1">
+          <span className="flex w-20 flex-col items-center gap-1 rounded-lg border border-border bg-card px-1 py-2 text-center">
+            <span className="flex gap-0.5 text-primary" aria-hidden="true">
+              {icons[stage].map((Icon, k) => <Icon key={k} size={18} />)}
+            </span>
+            <span className="text-[10px] leading-tight text-muted-foreground">{stage}</span>
+          </span>
+          {i < CHAIN_STAGES.length - 1 ? <span aria-hidden="true" className="text-muted-foreground">›</span> : null}
+        </li>
+      ))}
+    </ol>
   );
 }
 

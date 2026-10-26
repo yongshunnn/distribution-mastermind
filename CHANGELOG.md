@@ -13,3 +13,8 @@ Milestones 1–8 built; milestone 9 (data pulls) scaffolded. Verified in demo mo
 - **M7 Supply chain 3D** — staircase of cost layers per stage, volume tubes, stock footprints, moving goods (respects reduced motion), unit switch, route compare, restacking sliders, 2D fallback, disabled Globe toggle.
 - **M8 Scenarios, scorecard, market watch** — ranked plan under capital/WC/people/pallet limits with monthly cash need; editable score weights; watch notes that flag plays, gates and market status.
 - **M9 Data pulls (scaffold)** — cron routes for data.gov.sg outlet counts and UN Comtrade; never overwrite measured/quoted values. Untested against the live APIs (unreachable from the build sandbox).
+
+## 0.2.0 — 2026-10-26
+
+- **Trial mode** — explore on a separate sample copy of the data (starter seed plus fictional audits, partners, sales, fees, scores). Switch on from the login page or the sidebar/More page; banner offers Reset and Exit; `TRIAL_MODE=off` disables it.
+- **3D supply chain mockups** — each stage of every route shows a low-poly model: factory, truck, ship/plane/truck for the main leg, port and customs crane, warehouse, delivery van, supermarket / cash & carry / B2B hub / distributor warehouse, food stall or shop, consumer. Small vehicles travel the lanes (planes fly an arc). Tapping a mockup explains the cost added at that stage. The 2D view gets a matching icon strip. Phone framing improved; 3D labels no longer cover the bottom navigation.

@@ -6,9 +6,17 @@ import { buildAllPlays, playTitle } from '@/lib/db/plays';
 
 export const metadata = { title: 'Supply chain' };
 
+const OVERLAND = ['SG', 'MY', 'TH'];
+
+/** Same rule as the supply-chain drafter: domestic or overland neighbours by truck, otherwise sea freight. */
+function freightMode(origin: string, dest: string): Branch['freight'] {
+  if (origin === dest || (OVERLAND.includes(origin) && OVERLAND.includes(dest))) return 'truck';
+  return 'ship';
+}
+
 export default async function SupplyChainPage({ searchParams }: { searchParams: Promise<{ principal?: string; sku?: string; market?: string; play?: string }> }) {
   const sp = await searchParams;
-  const [plays, principals, markets, skus] = await Promise.all([buildAllPlays(), rows('principals'), rows('markets'), rows('sku_configs')]);
+  const [plays, principals, markets, skus, sites] = await Promise.all([buildAllPlays(), rows('principals'), rows('markets'), rows('sku_configs'), rows('production_sites')]);
   const focus = plays.find((p) => p.play.id === sp.play);
   const principalId = sp.principal ?? focus?.principalId ?? principals[0]?.id;
   const marketId = sp.market ?? focus?.market.id ?? markets.find((m) => m.iso2 === 'SG')?.id ?? '';
@@ -18,6 +26,9 @@ export default async function SupplyChainPage({ searchParams }: { searchParams: 
   const branches: Branch[] = chosen.map((p) => ({
     id: p.play.id, title: playTitle(p), market: p.market.name, channel: p.channel.name, inputs: p.inputs, ctx: p.ctx,
     unitsPerCarton: p.unitsPerCarton, sizeLitres: p.sizeLitres,
+    freight: freightMode((p.play.assumption_overrides.origin_iso2 as string) ?? sites.find((s) => s.principal_id === p.principalId)?.country ?? p.market.iso2, p.market.iso2),
+    channelType: p.channel.channel_type,
+    outletKind: /food|hawker|f&b|stall|restaurant|catering|beverage|hotel/i.test(p.segment?.outlet_type ?? '') ? 'food' : 'shop',
   }));
   const sel = 'min-h-11 rounded-lg border border-border bg-card px-3 text-sm';
   return (
