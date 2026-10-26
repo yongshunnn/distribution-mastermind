@@ -29,6 +29,9 @@ npm run test:rls    # Throwaway local Postgres: migrations + seed, then anon/str
 
 ## Deploy (Vercel + Supabase) — spec §15
 
+**Status (26 Oct 2026):** the Supabase project **distribution-mastermind** (`joeeqfrpgudikomwhamy`, Singapore) exists with all three migrations applied and `yongshun@staffgo.sg` allowlisted. The data is loaded from inside the app: sign in, then press **Load starter data** on Home (it only runs while the workspace is empty). What remains: push to GitHub, import into Vercel, set the auth URLs.
+
+
 1. **Supabase** — create a project in region *Southeast Asia (Singapore)*.
    - Apply `supabase/migrations/*.sql` in order: `supabase link --project-ref <ref> && supabase db push`, or paste them into the SQL editor.
    - Load the seed: paste `supabase/seed.sql` into the SQL editor, or run `npm run seed` with `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` set.
