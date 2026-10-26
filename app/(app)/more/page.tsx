@@ -1,10 +1,15 @@
 import Link from 'next/link';
 import { SECONDARY_LINKS } from './links';
 import { isSupabaseConfigured } from '@/lib/env';
+import { getStore } from '@/lib/db/store';
+import { isTrialEnabled } from '@/lib/trial';
+import { TrialSwitchOn } from '@/components/trial';
+import { exitTrial } from '@/app/actions/trial';
 
 export const metadata = { title: 'More' };
 
-export default function MorePage() {
+export default async function MorePage() {
+  const store = await getStore();
   return (
     <div>
       <h1 className="mb-4 text-xl font-semibold">More</h1>
@@ -21,7 +26,16 @@ export default function MorePage() {
           </li>
         ))}
       </ul>
-      {isSupabaseConfigured() ? (
+      <div className="mt-6">
+        {store.mode === 'trial' ? (
+          <form action={exitTrial}>
+            <button className="min-h-11 w-full rounded-lg border border-primary text-sm font-medium text-primary">Exit trial mode</button>
+          </form>
+        ) : store.mode === 'supabase' && isTrialEnabled() ? (
+          <TrialSwitchOn />
+        ) : null}
+      </div>
+      {isSupabaseConfigured() && store.mode === 'supabase' ? (
         <form action="/auth/signout" method="post" className="mt-6">
           <button className="min-h-11 w-full rounded-lg border border-border text-sm">Sign out</button>
         </form>

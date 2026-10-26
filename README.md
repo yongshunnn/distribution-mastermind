@@ -17,6 +17,17 @@ npm run build && npm start      # http://localhost:3000
 
 Without Supabase environment variables, the app runs on an in-memory copy of the seed (Singapore, Malaysia, Myanmar, SG KEON) with no login. A banner shows this, and edits reset on restart.
 
+## Trial mode
+
+A separate sample copy of the data for looking around, without touching the live database.
+
+- **Turn it on:** the login page has a **Try trial mode with sample data** button. Enter an allowlisted email (no email is sent). Signed-in members can use **Switch to trial mode** in the sidebar or on the More page.
+- **Turn it off:** **Exit trial** in the banner (this browser only). To disable trial mode for everyone, set `TRIAL_MODE=off` in Vercel and redeploy.
+- **Reset sample data** in the banner puts everything back.
+- **Data:** the starter seed plus clearly fictional sample activity (Malaysia shelf audit, two sample distributors, six months of Singapore sales, a mixed fee model, market scores, a market-watch note). All of it is tagged placeholder and sourced "Trial sample (fictional)".
+- Trial edits live in server memory. They can reset when Vercel recycles an instance, and separate instances may show different edits.
+- The trial cookie is HMAC-signed with `TRIAL_SECRET` (or `CRON_SECRET`). Without a secret, trial mode stays off in production.
+
 ## Tests
 
 ```bash

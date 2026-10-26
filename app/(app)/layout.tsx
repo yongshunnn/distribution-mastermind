@@ -5,11 +5,14 @@ import { glossaryMap } from '@/lib/db/data';
 import { getStore } from '@/lib/db/store';
 import { isSupabaseConfigured } from '@/lib/env';
 import { supabaseServer } from '@/lib/supabase/server';
+import { exitTrial, resetTrial } from '@/app/actions/trial';
+import { TrialSwitchOn } from '@/components/trial';
+import { isTrialEnabled } from '@/lib/trial';
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   const store = await getStore();
   let email: string | null = null;
-  if (isSupabaseConfigured()) {
+  if (store.mode === 'supabase') {
     email = await store.userEmail();
     const { data: member } = await (await supabaseServer()).rpc('is_member');
     if (!member) {
@@ -27,6 +30,13 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const glossary = await glossaryMap();
   return (
     <GlossaryProvider value={glossary}>
+      {store.mode === 'trial' ? (
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 bg-accent px-4 py-1.5 text-center text-xs text-primary" role="status" data-testid="trial-banner">
+          <span><strong>Trial mode</strong> — sample data, separate from your live database. Edits can reset at any time.</span>
+          <form action={resetTrial}><button className="min-h-8 underline">Reset sample data</button></form>
+          <form action={exitTrial}><button className="min-h-8 font-medium underline">Exit trial</button></form>
+        </div>
+      ) : null}
       {store.mode === 'memory' ? (
         <div className="bg-warn-bg px-4 py-1.5 text-center text-xs text-warn" role="status">
           Demo mode — seed data in memory; edits reset when the server restarts. Configure Supabase to persist.
@@ -39,6 +49,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
           </Link>
           <SideNav />
           <div className="mt-auto px-3 text-xs text-muted-foreground">
+            {store.mode === 'supabase' && isTrialEnabled() ? <div className="mb-3"><TrialSwitchOn /></div> : null}
             {email ? (
               <form action="/auth/signout" method="post" className="space-y-1">
                 <p className="truncate">{email}</p>

@@ -65,8 +65,9 @@ export async function addFxRate(form: FormData) {
 export async function addAllowedUser(form: FormData) {
   const email = required(form, 'email', 'Email').toLowerCase();
   const row = { email, display_name: s(form, 'display_name'), role: 'member', created_at: new Date().toISOString() };
-  if (!isSupabaseConfigured()) {
-    await (await getStore()).insert('allowed_users', [row]);
+  const store = await getStore();
+  if (!isSupabaseConfigured() || store.mode !== 'supabase') {
+    await store.insert('allowed_users', [row]);
   } else {
     const svc = supabaseService();
     if (!svc) throw new Error('Set SUPABASE_SERVICE_ROLE_KEY on the server to manage the allowlist from the app, or insert into allowed_users in the Supabase SQL editor.');

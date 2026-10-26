@@ -62,3 +62,9 @@ Items marked **Owner to confirm** need an answer from Yong Shun.
 - The owner's email (`yongshun@staffgo.sg`) is the first allowlisted user.
 - **Data pulls (milestone 9):** `/api/cron/sg-outlets` (data.gov.sg) and `/api/cron/comtrade` exist and never overwrite `measured`/`quoted` values. Both data.gov.sg and MAS were **unreachable from the build sandbox**, so the pullers are untested against the live APIs; they validate the response shape and write nothing if it differs. An MAS FX puller was not built for the same reason; add FX rates in Settings for now.
 - Globe view is not built (deferred by decision); a disabled "Globe (coming)" toggle is shown and every `sc_node` stores lat/lng.
+
+## Trial mode (added 26 Oct 2026)
+
+- Trial mode runs on its own in-memory copy of the seed plus fictional sample activity (`lib/seed/trial.ts`). It never reads from or writes to Supabase.
+- Entry is gated by the allowlist (`is_email_allowed`), not by a sign-in link. Anyone who knows an allowlisted email can therefore open the **sample** data (which includes the seeded Myanmar audit and partner terms) but never the live database. Set `TRIAL_MODE=off` to remove this.
+- On serverless, memory is per instance, so trial edits are not durable. This is acceptable for exploring; real work belongs in the live workspace.

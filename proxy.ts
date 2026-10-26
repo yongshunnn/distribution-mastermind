@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
+import { TRIAL_COOKIE, verifyTrial } from '@/lib/trial';
 
 const PUBLIC = ['/login', '/auth/', '/api/cron/', '/manifest.webmanifest', '/sw.js', '/icons/'];
 
@@ -8,6 +9,7 @@ export async function proxy(request: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return NextResponse.next();
+  if (await verifyTrial(request.cookies.get(TRIAL_COOKIE)?.value)) return NextResponse.next();
 
   let response = NextResponse.next({ request });
   const supabase = createServerClient(url, key, {

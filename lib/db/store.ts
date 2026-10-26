@@ -1,6 +1,9 @@
 import 'server-only';
 import { randomUUID } from 'node:crypto';
 import { connection } from 'next/server';
+import { cookies } from 'next/headers';
+import { TRIAL_COOKIE, verifyTrial } from '@/lib/trial';
+import { addTrialExtras } from '@/lib/seed/trial';
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { isSupabaseConfigured } from '@/lib/env';
 import { buildSeed } from '@/lib/seed/build';
@@ -24,7 +27,7 @@ export interface SetValueInput {
 }
 
 export interface Store {
-  mode: 'memory' | 'supabase';
+  mode: 'memory' | 'trial' | 'supabase';
   list<T extends TableName>(table: T, where?: Partial<Row<T>>): Promise<Row<T>[]>;
   get<T extends TableName>(table: T, id: string): Promise<Row<T> | null>;
   insert<T extends TableName>(table: T, rows: Partial<Row<T>>[]): Promise<Row<T>[]>;
@@ -36,16 +39,27 @@ export interface Store {
 
 // ───────────────────────── memory (demo mode) ─────────────────────────
 type MemState = { data: Dataset };
-const g = globalThis as unknown as { __dmStore?: MemState };
+const g = globalThis as unknown as { __dmStore?: MemState; __dmTrial?: MemState };
 
-function mem(): MemState {
+function demoState(): MemState {
   if (!g.__dmStore) g.__dmStore = { data: buildSeed() };
   return g.__dmStore;
+}
+
+/** Trial data lives apart from both demo mode and the live database. */
+function trialState(): MemState {
+  if (!g.__dmTrial) g.__dmTrial = { data: addTrialExtras(buildSeed()) };
+  return g.__dmTrial;
 }
 
 /** Test hook: restore the seed. */
 export function resetMemoryStore() {
   g.__dmStore = { data: buildSeed() };
+}
+
+/** Restores the trial sample data. */
+export function resetTrialStore() {
+  g.__dmTrial = { data: addTrialExtras(buildSeed()) };
 }
 
 const clone = <X,>(x: X): X => structuredClone(x);
@@ -55,8 +69,10 @@ function matches(row: Record<string, unknown>, where?: Record<string, unknown>):
   return Object.entries(where).every(([k, v]) => row[k] === v);
 }
 
-const memoryStore: Store = {
-  mode: 'memory',
+function memoryStore(mode: 'memory' | 'trial', state: () => MemState, email: string | null): Store {
+  const mem = state;
+  return {
+  mode,
   async list(table, where) {
     const rows = mem().data[table] as unknown as Record<string, unknown>[];
     return clone(rows.filter((r) => matches(r, where as Record<string, unknown>))) as never;
@@ -113,9 +129,10 @@ const memoryStore: Store = {
     return clone(row);
   },
   async userEmail() {
-    return null;
+    return email;
   },
-};
+  };
+}
 
 // ───────────────────────── supabase ─────────────────────────
 function supabaseStore(sb: SupabaseClient): Store {
@@ -175,6 +192,17 @@ function supabaseStore(sb: SupabaseClient): Store {
 /** The store for this request. Calling it opts the route into dynamic rendering. */
 export async function getStore(): Promise<Store> {
   await connection();
-  if (!isSupabaseConfigured()) return memoryStore;
+  const trialEmail = await trialUser();
+  if (trialEmail) return memoryStore('trial', trialState, trialEmail);
+  if (!isSupabaseConfigured()) return memoryStore('memory', demoState, null);
   return supabaseStore(await supabaseServer());
+}
+
+/** The trial user's email when this request carries a valid trial cookie. */
+export async function trialUser(): Promise<string | null> {
+  try {
+    return await verifyTrial((await cookies()).get(TRIAL_COOKIE)?.value);
+  } catch {
+    return null;
+  }
 }

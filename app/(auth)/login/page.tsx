@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { isSupabaseConfigured } from '@/lib/env';
 import { LoginForm } from './login-form';
+import { TrialEntry } from '@/components/trial';
+import { isTrialEnabled } from '@/lib/trial';
 
 export const metadata = { title: 'Sign in' };
 
@@ -13,7 +15,18 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
       {sp.error ? <p className="mb-3 rounded-lg bg-danger-bg px-3 py-2 text-sm text-danger">{sp.error}</p> : null}
       {isSupabaseConfigured() ? (
         <LoginForm next={sp.next ?? '/home'} />
-      ) : (
+      ) : null}
+      {isSupabaseConfigured() && isTrialEnabled() ? (
+        <div className="mt-8 border-t border-border pt-6">
+          <p className="mb-1 text-sm font-medium">Just looking?</p>
+          <p className="mb-3 text-sm text-muted-foreground">
+            Trial mode opens the platform on a separate sample copy of the data — markets, plays, audits, partners and trackers — so you can click
+            around freely. Your live database is never touched.
+          </p>
+          <TrialEntry askEmail />
+        </div>
+      ) : null}
+      {isSupabaseConfigured() ? null : (
         <div className="space-y-3 rounded-xl border border-border bg-card p-4 text-sm">
           <p>
             <strong>Demo mode.</strong> No Supabase project is configured, so the app runs on the built-in seed data and changes reset when
