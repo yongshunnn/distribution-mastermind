@@ -1,0 +1,10 @@
+[
+  { "market": null, "role": "Distributor", "metric": "gross_margin", "low": 5, "high": 12, "unit": "pct", "tag": "estimated", "source": "BeatRoute", "source_url": "https://beatroute.io/resources/blog/distributor-margin-what-it-is-why-it-matters-for-retail-brands/" },
+  { "market": "MM", "role": "Distributor", "metric": "gross_margin", "low": 4, "high": 8, "unit": "pct", "tag": "measured", "source": "Myanmar proposal (reference)" },
+  { "market": null, "role": "Distributor", "metric": "incentive", "low": 1, "high": 3, "unit": "pct", "tag": "measured", "source": "Myanmar proposal" },
+  { "market": null, "role": "Distributor", "metric": "credit_days", "low": 7, "high": 21, "unit": "days", "tag": "measured", "source": "Myanmar proposal" },
+  { "market": null, "role": "Distributor", "metric": "review_cadence", "text_value": "quarterly", "tag": "measured", "source": "Myanmar proposal" },
+  { "market": null, "role": "Importer/Distributor", "metric": "term_months", "low": 12, "high": 12, "unit": "months", "tag": "measured", "source": "Myanmar proposal" },
+  { "market": null, "role": "Full-service", "metric": "term_months", "low": 24, "high": 36, "unit": "months", "tag": "measured", "source": "Myanmar proposal" },
+  { "market": null, "role": "Any", "metric": "exclusivity_rule", "text_value": "Only with minimum purchase commitment and review/termination trigger", "tag": "measured", "source": "Myanmar proposal" }
+]

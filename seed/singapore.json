@@ -1,0 +1,67 @@
+{
+  "market": { "name": "Singapore", "iso2": "SG", "currency": "SGD", "vat_name": "GST", "status": "active", "lat": 1.3521, "lng": 103.8198 },
+  "values": [
+    { "field": "gst_rate", "label": "GST (incl. import GST)", "value_num": 9, "unit": "pct", "tag": "public", "source_label": "WKO", "source_url": "https://www.wko.at/aussenwirtschaft/singapur-export-import", "as_of": "2024-01-01" },
+    { "field": "import_tax_rate", "label": "Import GST rate", "value_num": 9, "unit": "pct", "tag": "public", "source_label": "WKO", "source_url": "https://www.wko.at/aussenwirtschaft/singapur-export-import", "as_of": "2024-01-01" },
+    { "field": "import_tax_recoverable", "label": "Import GST recoverable", "value_num": 1, "unit": "flag", "tag": "estimated", "note": "Recoverable for a GST-registered importer (spec §8.1)." },
+    { "field": "sales_tax_rate", "label": "GST in shelf price", "value_num": 9, "unit": "pct", "tag": "public", "source_label": "WKO", "source_url": "https://www.wko.at/aussenwirtschaft/singapur-export-import", "as_of": "2024-01-01" },
+    { "field": "fnb_ceased_2025", "label": "F&B businesses ceased (2025)", "value_num": 3074, "unit": "businesses", "tag": "public", "source_label": "TravelMole citing ACRA", "source_url": "https://www.travelmole.com/news/singapore-southeast-asia-gastronomy-capital", "as_of": "2025-12-31" },
+    { "field": "import_permit", "label": "Import permit", "value_text": "TradeNet permit before arrival; NEA Hazardous Substances licence only if controlled substances", "tag": "public", "source_label": "Singapore Customs", "source_url": "https://customs.gov.sg/businesses/national-single-window/tradenet/competent-authorities-requirements/hazardous-substances" },
+    { "field": "home_care_competitors", "label": "Competitors (home care)", "value_text": "Unilever, P&G, Reckitt, SC Johnson, Kao, Lion, Selleys, Green Kulture", "tag": "public", "source_label": "Nexdigm", "source_url": "https://www.nexdigm.com/market-research/insights/blog/singapore-household-cleaners-industry/" },
+    { "field": "origin_handling_per_unit", "label": "Factory → warehouse trucking", "value_num": 0.05, "unit": "SGD/unit", "tag": "placeholder", "note": "Illustrative — replace with a quote." },
+    { "field": "freight_per_unit", "label": "Main freight", "value_num": 0, "unit": "SGD/unit", "tag": "placeholder", "note": "Production site is a placeholder in Singapore, so no main freight yet." },
+    { "field": "insurance_per_unit", "label": "Insurance", "value_num": 0, "unit": "SGD/unit", "tag": "placeholder" },
+    { "field": "clearance_per_unit", "label": "Clearance", "value_num": 0, "unit": "SGD/unit", "tag": "placeholder" },
+    { "field": "stock_days", "label": "Stock days", "value_num": 45, "unit": "days", "tag": "placeholder" },
+    { "field": "pallet_cost_per_day", "label": "3PL pallet storage", "value_num": 1.0, "unit": "SGD/pallet/day", "tag": "placeholder", "note": "Illustrative — get two 3PL quotes." },
+    { "field": "handling_per_order", "label": "Pick & pack per order", "value_num": 10, "unit": "SGD/order", "tag": "placeholder" },
+    { "field": "units_per_order", "label": "Units per order", "value_num": 48, "unit": "units", "tag": "placeholder" },
+    { "field": "delivery_cost_per_drop", "label": "Delivery per drop", "value_num": 45, "unit": "SGD/drop", "tag": "placeholder" },
+    { "field": "units_per_drop", "label": "Units per drop", "value_num": 120, "unit": "units", "tag": "placeholder" },
+    { "field": "marketing_per_unit", "label": "Marketing per unit", "value_num": 0.1, "unit": "SGD/unit", "tag": "placeholder" },
+    { "field": "payable_days", "label": "Days to pay principal", "value_num": 30, "unit": "days", "tag": "placeholder" },
+    { "field": "fixed_monthly_cost", "label": "Fixed monthly cost per channel", "value_num": 1500, "unit": "SGD/month", "tag": "placeholder" }
+  ],
+  "segments": [
+    { "key": "supermarkets", "outlet_type": "Supermarkets", "values": [{ "field": "outlet_count", "label": "Supermarkets (2025)", "value_num": 718, "unit": "outlets", "tag": "public", "source_label": "data.gov.sg", "source_url": "https://data.gov.sg/datasets/d_a9e81ab29216b10b69e23e7957b680b9/view", "as_of": "2025-12-31" }] },
+    { "key": "food_shops", "outlet_type": "Food shops", "values": [{ "field": "outlet_count", "label": "Food shops (2025)", "value_num": 24359, "unit": "outlets", "tag": "public", "source_label": "data.gov.sg", "source_url": "https://data.gov.sg/datasets/d_a9e81ab29216b10b69e23e7957b680b9/view", "as_of": "2025-12-31" }] },
+    { "key": "food_stalls", "outlet_type": "Food stalls", "values": [{ "field": "outlet_count", "label": "Food stalls (2025)", "value_num": 13893, "unit": "outlets", "tag": "public", "source_label": "data.gov.sg", "source_url": "https://data.gov.sg/datasets/d_a9e81ab29216b10b69e23e7957b680b9/view", "as_of": "2025-12-31" }] },
+    { "key": "non_retail_food", "outlet_type": "Non-retail food establishments", "values": [{ "field": "outlet_count", "label": "Non-retail food establishments (2025)", "value_num": 2667, "unit": "outlets", "tag": "public", "source_label": "data.gov.sg", "source_url": "https://data.gov.sg/datasets/d_a9e81ab29216b10b69e23e7957b680b9/view", "as_of": "2025-12-31" }] },
+    { "key": "hawker_stalls", "outlet_type": "NEA hawker stalls", "values": [{ "field": "outlet_count", "label": "NEA hawker stalls (2025)", "value_num": 11446, "unit": "outlets", "tag": "public", "source_label": "data.gov.sg", "source_url": "https://data.gov.sg/datasets/d_a9e81ab29216b10b69e23e7957b680b9/view", "as_of": "2025-12-31" }] }
+  ],
+  "channels": [
+    { "key": "fortune", "name": "Fortune", "channel_type": "retail_chain", "segments": ["supermarkets"], "distributor_tier": false, "delivery_mode": "Store or DC delivery — to confirm",
+      "terms": [
+        { "field": "retailer_margin", "label": "Fortune margin", "value_num": 30, "unit": "pct", "tag": "placeholder", "note": "Replace with chain quote." },
+        { "field": "rebate", "label": "Rebate", "value_num": 0, "unit": "pct", "tag": "placeholder" },
+        { "field": "listing_fee_total", "label": "Listing fees (per SKU)", "value_num": null, "unit": "SGD", "tag": "placeholder", "note": "To quote." },
+        { "field": "receivable_days", "label": "Payment terms", "value_num": 60, "unit": "days", "tag": "placeholder" },
+        { "field": "returns_pct", "label": "Returns", "value_num": null, "unit": "pct", "tag": "placeholder" }
+      ] },
+    { "key": "prime", "name": "Prime", "channel_type": "retail_chain", "segments": ["supermarkets"], "distributor_tier": false, "delivery_mode": "Store or DC delivery — to confirm",
+      "terms": [
+        { "field": "retailer_margin", "label": "Prime margin", "value_num": 30, "unit": "pct", "tag": "placeholder", "note": "Replace with chain quote." },
+        { "field": "rebate", "label": "Rebate", "value_num": 0, "unit": "pct", "tag": "placeholder" },
+        { "field": "listing_fee_total", "label": "Listing fees (per SKU)", "value_num": null, "unit": "SGD", "tag": "placeholder", "note": "To quote." },
+        { "field": "receivable_days", "label": "Payment terms", "value_num": 60, "unit": "days", "tag": "placeholder" },
+        { "field": "returns_pct", "label": "Returns", "value_num": null, "unit": "pct", "tag": "placeholder" }
+      ] },
+    { "key": "foodmax", "name": "FoodMax", "channel_type": "b2b_platform", "segments": ["food_shops", "food_stalls", "hawker_stalls", "non_retail_food"], "distributor_tier": false, "delivery_mode": "To confirm (purchase vs consignment)",
+      "notes": "B2B food-supply platform for F&B. Terms are placeholders until FoodMax confirms (open question in spec §2).",
+      "terms": [
+        { "field": "retailer_margin", "label": "Platform margin", "value_num": 20, "unit": "pct", "tag": "placeholder", "note": "FoodMax terms not yet known." },
+        { "field": "rebate", "label": "Rebate", "value_num": 0, "unit": "pct", "tag": "placeholder" },
+        { "field": "listing_fee_total", "label": "Listing fees", "value_num": 0, "unit": "SGD", "tag": "placeholder" },
+        { "field": "receivable_days", "label": "Payment terms", "value_num": 30, "unit": "days", "tag": "placeholder" },
+        { "field": "units_per_order", "label": "Units per order", "value_num": 8, "unit": "units", "tag": "placeholder" }
+      ] }
+  ],
+  "trade_rules": [],
+  "compliance_gates": [
+    { "requirement": "TradeNet import permit", "detail": "Permit before arrival; NEA Hazardous Substances licence only if controlled substances.", "authority": "Singapore Customs / NEA", "tag": "public", "source": "Singapore Customs", "source_url": "https://customs.gov.sg/businesses/national-single-window/tradenet/competent-authorities-requirements/hazardous-substances" }
+  ],
+  "competitors": [],
+  "partners": [],
+  "evidence": [],
+  "tracker": null
+}

@@ -1,0 +1,70 @@
+{
+  "market": { "name": "Myanmar", "iso2": "MM", "currency": "MMK", "vat_name": "Commercial tax", "status": "paused", "lat": 16.8409, "lng": 96.1735,
+    "blocker": "Import licence hard to obtain",
+    "alt_routes": ["full-service distributor holding licence", "local co-packing / licensed manufacture"] },
+  "values": [
+    { "field": "audit_sites", "label": "Audit sites (Yangon, 10 Apr 2026)", "value_text": "Market Place (Myanmar Plaza), City Mart (Yaekyaw), One Stop Mart (Thuwanna), City Express (Thuwanna), a Thuwanna mom-and-pop store", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "audit_skus_city_mall", "label": "SKUs at the City Mall site", "value_num": 65, "unit": "SKUs", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "audit_local_share", "label": "Local share of SKUs", "value_num": 98, "unit": "pct", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "audit_imported_share", "label": "Imported share of SKUs", "value_num": 2, "unit": "pct", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "audit_1l_price_low", "label": "1L price — economy (low)", "value_num": 3890, "unit": "MMK/L", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "audit_1l_price_high", "label": "1L price — super-premium import (high)", "value_num": 32200, "unit": "MMK/L", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "audit_cluster_low", "label": "Mainstream cluster — low", "value_num": 4800, "unit": "MMK/L", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "audit_cluster_high", "label": "Mainstream cluster — high", "value_num": 6000, "unit": "MMK/L", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "target_shelf_price_1l", "label": "Recommended target shelf price (1L)", "value_num": 5500, "unit": "MMK/L", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "mfr_share_jmax", "label": "Manufacturer share — J Max Co., Ltd.", "value_num": 15, "unit": "pct", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "mfr_share_uncle_eric", "label": "Manufacturer share — Uncle Eric Production", "value_num": 11, "unit": "pct", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "mfr_share_unilever", "label": "Manufacturer share — Unilever EAC Myanmar", "value_num": 8, "unit": "pct", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "mfr_share_others", "label": "Manufacturer share — others", "value_num": 54, "unit": "pct", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10", "note": "Remaining named shares not given in the analysis." },
+    { "field": "scent_lemon", "label": "Scent share — Lemon", "value_num": 46, "unit": "pct", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "scent_lime", "label": "Scent share — Lime", "value_num": 37, "unit": "pct", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "gateway_city_mart", "label": "Distribution gateway — City Mart Holding", "value_num": 11, "unit": "pct", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "gateway_unilever", "label": "Distribution gateway — Unilever", "value_num": 8, "unit": "pct", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "gateway_fragmented", "label": "Via smaller fragmented networks", "value_num": 64, "unit": "pct", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" },
+    { "field": "eye_level_leaders", "label": "Eye-level shelf held by leaders", "value_text": "Leaders hold 40–60% of eye-level shelf via multi-facing", "tag": "measured", "source_label": "SG KEON internal Dishwashing Market Entry Analysis", "as_of": "2026-04-10" }
+  ],
+  "segments": [],
+  "channels": [],
+  "trade_rules": [],
+  "compliance_gates": [
+    { "requirement": "Import licence", "detail": "Hard to obtain — market paused. Alternatives: full-service distributor holding a licence, or local co-packing / licensed manufacture.", "authority": "Ministry of Commerce", "tag": "measured", "status": "blocked", "source": "SG KEON field work" }
+  ],
+  "competitors": [
+    { "brand": "E-Lan", "owner": "Unilever EAC Myanmar (JV)", "pack_sizes": ["450ml", "450g", "1.2kg", "1.8kg"], "positioning": "Reliable choice; international R&D, local pricing", "structural_strength": "Unilever distribution, planogram consistency", "weakness": "Limited emotional differentiation", "how_we_win": "Performance-innovation story (enzyme formula)" },
+    { "brand": "City Value", "owner": "City Mart Holding (private label)", "pack_sizes": ["1L", "3.5L", "3.5kg"], "positioning": "Budget alternative to brands", "structural_strength": "Guaranteed prime shelf in City Mart group", "weakness": "Follower, price-only story", "how_we_win": "Don't fight on price; use international manufacturing credibility" },
+    { "brand": "Daily", "owner": "Swam Myat Paing (local)", "pack_sizes": ["500ml", "600ml", "2L", "4L"], "positioning": "Value for money", "structural_strength": "Deep traditional trade, flexible wholesale pricing", "weakness": "No international backing", "how_we_win": "Modern trade first, then earn traditional trade" },
+    { "brand": "O-Shin", "owner": "Independent local", "pack_sizes": ["1.2L", "4L"], "positioning": "Utility to modern; packaging and fragrance", "structural_strength": "CVS foothold in Yangon and Mandalay", "weakness": "Small scale", "how_we_win": "Citrus-matched SKU; close distribution gap" }
+  ],
+  "partners": [
+    { "name": "DKSH Myanmar", "roles": ["full_service_distributor"], "reach": "Healthcare + consumer units; network 28,300+ hospitals, clinics, pharmacies, outlets", "notes": "In Myanmar since 1995/96.", "deal_stage": "identified" },
+    { "name": "FairDeal Co., Ltd", "roles": ["full_service_distributor"], "reach": "Local market-expansion services; consumer + healthcare units", "notes": "Live contact from Aug 2026 trip.", "deal_stage": "in_contact" },
+    { "name": "Golden Land Trading Co., Ltd", "roles": ["distributor"], "reach": "Household & F&B cleaning; national reach", "notes": "MOQ 1×20ft container/month.", "deal_stage": "terms_received",
+      "asks": [
+        { "metric": "gross_margin", "value": 15, "unit": "pct", "note": "Asked 15% margin" },
+        { "metric": "moq", "value_text": "1×20ft container / month", "note": "Minimum order" }
+      ] }
+  ],
+  "evidence": [
+    { "statement": "5.5–5.6 million people lack basic water access", "value": "5.5–5.6m", "tag": "public", "source": "UNICEF Myanmar (as cited in the partnership proposal)" },
+    { "statement": "About 1 in 3 households lack basic hygiene facilities", "value": "~1 in 3", "tag": "public", "source": "UNICEF Myanmar (as cited in the partnership proposal)" },
+    { "statement": "Recurring cholera / acute watery diarrhoea outbreaks since mid-2024", "value": "since mid-2024", "tag": "public", "source": "WHO / OCHA (as cited in the partnership proposal)" },
+    { "statement": "74% of health spending is out-of-pocket", "value": "74%", "tag": "public", "source": "WHO (as cited in the partnership proposal)" }
+  ],
+  "tracker": {
+    "principal": "sg_keon",
+    "default_note": "Seeded status — owner to confirm.",
+    "statuses": {
+      "Store audit across outlet tiers": "done",
+      "Price bands and target shelf price set": "done",
+      "Competitor cards written (with \"how we win\")": "done",
+      "Range-gap check vs rivals' pack sizes": "done",
+      "≥2 candidates scored per chosen role": "in_progress"
+    },
+    "extra_items": [
+      { "stage_no": 4, "item": "Import licence route", "required": true, "status": "blocked", "note": "Import licence hard to obtain — market paused. Owner to confirm.", "watch_out": "Check the import licence route before investing in field work." }
+    ]
+  },
+  "watchouts": [
+    { "text": "Check the import licence route before investing in field work.", "stage_no": 1, "category": "licence" }
+  ]
+}

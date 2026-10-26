@@ -1,0 +1,22 @@
+{
+  "allowed_users": [{ "email": "yongshun@staffgo.sg", "display_name": "Yong Shun", "role": "owner" }],
+  "settings": {
+    "stale_threshold_days": 180,
+    "cluster_width_pct": 12.5,
+    "base_currency": "SGD"
+  },
+  "values": [
+    { "field": "annual_finance_rate", "label": "Annual finance rate", "value_num": 8, "unit": "pct", "tag": "placeholder", "note": "Our cost of capital — replace with the actual borrowing rate." },
+    { "field": "value_density_threshold", "label": "Value-density threshold", "value_num": 1000, "unit": "SGD/m³", "tag": "placeholder", "note": "Plays below this net revenue per m³ are flagged." },
+    { "field": "weight_size", "label": "Score weight — Size", "value_num": 25, "unit": "pct", "tag": "computed", "source_label": "Spec default" },
+    { "field": "weight_access", "label": "Score weight — Access", "value_num": 20, "unit": "pct", "tag": "computed", "source_label": "Spec default" },
+    { "field": "weight_competition", "label": "Score weight — Competition", "value_num": 20, "unit": "pct", "tag": "computed", "source_label": "Spec default" },
+    { "field": "weight_right_to_win", "label": "Score weight — Right to win", "value_num": 20, "unit": "pct", "tag": "computed", "source_label": "Spec default" },
+    { "field": "weight_growth", "label": "Score weight — Growth", "value_num": 15, "unit": "pct", "tag": "computed", "source_label": "Spec default" },
+    { "field": "people_per_play", "label": "People per play (FTE)", "value_num": 0.25, "unit": "FTE", "tag": "placeholder", "note": "Default team load per play, used by Scenarios." }
+  ],
+  "fx_rates": [
+    { "base": "MYR", "quote": "SGD", "rate": 0.3141, "month": "2026-08-01", "tag": "public", "source": "MAS via data.gov.sg (Aug 2026)" },
+    { "base": "MMK", "quote": "SGD", "rate": 0.00062, "month": "2026-08-01", "tag": "placeholder", "source": "Placeholder — official CBM vs market rate differ; confirm before use" }
+  ]
+}

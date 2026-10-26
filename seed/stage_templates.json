@@ -1,0 +1,40 @@
+{
+  "stages": [
+    { "stage_no": 1, "name": "Screen" },
+    { "stage_no": 2, "name": "Validate" },
+    { "stage_no": 3, "name": "Route & partners" },
+    { "stage_no": 4, "name": "Compliance & setup" },
+    { "stage_no": 5, "name": "Agreement" },
+    { "stage_no": 6, "name": "First order" },
+    { "stage_no": 7, "name": "Review" }
+  ],
+  "items": [
+    { "stage_no": 1, "item": "Market scorecard filled", "required": true, "watch_out": "Choosing on market size alone" },
+    { "stage_no": 1, "item": "Seed numbers reviewed", "required": true, "watch_out": "Placeholders left in place" },
+    { "stage_no": 1, "item": "Tariff line and import tax confirmed per SKU", "required": true, "watch_out": "Third-party tariff listings can be outdated" },
+    { "stage_no": 1, "item": "Licence and foreign-ownership blockers checked", "required": true, "watch_out": "Finding a licence blocker after spending (Myanmar import licence)" },
+    { "stage_no": 2, "item": "Store audit across outlet tiers", "required": true, "watch_out": "Auditing only premium outlets" },
+    { "stage_no": 2, "item": "Price bands and target shelf price set", "required": true, "watch_out": "Setting price before landed cost is known" },
+    { "stage_no": 2, "item": "Competitor cards written (with \"how we win\")", "required": true, "watch_out": "Fighting a retailer's own house brand on price" },
+    { "stage_no": 2, "item": "Range-gap check vs rivals' pack sizes", "required": true, "watch_out": "Range narrower than rivals' bulk packs" },
+    { "stage_no": 2, "item": "Price build-back shows positive headroom", "required": true, "watch_out": null },
+    { "stage_no": 3, "item": "Route chosen (role or own entry)", "required": true, "watch_out": null },
+    { "stage_no": 3, "item": "≥2 candidates scored per chosen role", "required": true, "watch_out": "Depending on one partner" },
+    { "stage_no": 3, "item": "Terms compared with benchmarks", "required": true, "watch_out": "Margin asks above benchmark; exclusivity without minimum purchase commitment" },
+    { "stage_no": 3, "item": "References checked", "required": false, "watch_out": "Partner carrying competing lines" },
+    { "stage_no": 4, "item": "Entity and licences (own entry)", "required": false, "watch_out": "Foreign-ownership capital rules" },
+    { "stage_no": 4, "item": "Tax registration", "required": true, "watch_out": null },
+    { "stage_no": 4, "item": "Labels checked against local marking rules", "required": true, "watch_out": "Relabelling at the border" },
+    { "stage_no": 4, "item": "Certifications planned (e.g. halal)", "required": false, "watch_out": "Lead times of months" },
+    { "stage_no": 4, "item": "Safety data sheets / hazard labels for B2B packs", "required": false, "watch_out": null },
+    { "stage_no": 5, "item": "Contract: pricing, credit, KPIs, review cadence, exit clauses", "required": true, "watch_out": "No termination trigger" },
+    { "stage_no": 5, "item": "Listing fees, rebates, returns entered in the model", "required": true, "watch_out": "Fees left out of the model" },
+    { "stage_no": 5, "item": "Credit limit and payment terms set", "required": true, "watch_out": "Long chain payment terms" },
+    { "stage_no": 6, "item": "Forecast and MOQ agreed", "required": true, "watch_out": "MOQ far above first-year sell-through" },
+    { "stage_no": 6, "item": "PO, production, freight booked", "required": true, "watch_out": null },
+    { "stage_no": 6, "item": "Certificate of origin and clearance documents", "required": true, "watch_out": "Missing CoO → MFN duty" },
+    { "stage_no": 6, "item": "Listings and launch plan", "required": false, "watch_out": "Shelf life running out in warehouse" },
+    { "stage_no": 7, "item": "90-day sell-through and contribution vs plan", "required": true, "watch_out": "Chasing volume at negative contribution" },
+    { "stage_no": 7, "item": "Reorder / expand / exit decision", "required": true, "watch_out": "Extending credit before a payment record exists" }
+  ]
+}

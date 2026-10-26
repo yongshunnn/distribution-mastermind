@@ -1,0 +1,11 @@
+{
+  "description": "Hand-computed build-back. Shelf 10.90 incl. 9% GST → 10.00 ex-tax. × (1 − 30% retailer) × (1 − 10% distributor) = 6.30. S = W 0.05 (1/day × 30 days ÷ 600 per pallet) + D 0.10 (20 per drop ÷ 200) + K 0 (finance rate 0) + trade spend 0 + M 0.20 = 0.35. L_max = 6.30 − 0.35 = 5.95.",
+  "distributorTier": true,
+  "inputs": {
+    "shelf_price": 10.9, "sales_tax_rate": 0.09, "retailer_margin": 0.3, "distributor_margin": 0.1,
+    "pallet_cost_per_day": 1, "stock_days": 30, "units_per_pallet": 600, "handling_per_order": 0, "units_per_order": 10,
+    "delivery_cost_per_drop": 20, "units_per_drop": 200, "marketing_per_unit": 0.2, "annual_finance_rate": 0,
+    "supplier_price": 3, "freight_per_unit": 0.4
+  },
+  "expected": { "l_max": 5.95, "landed": 3.4, "headroom": 2.55 }
+}

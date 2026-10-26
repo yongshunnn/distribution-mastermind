@@ -1,0 +1,141 @@
+{
+  "market": { "name": "Malaysia", "iso2": "MY", "currency": "MYR", "vat_name": "SST", "status": "exploring", "lat": 3.139, "lng": 101.6869 },
+  "values": [
+    { "field": "population", "label": "Population 2025 (prelim.)", "value_num": 34200000, "unit": "people", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" },
+    { "field": "population_growth", "label": "Population growth", "value_num": 0.5, "unit": "pct", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" },
+    { "field": "citizens", "label": "Citizens", "value_num": 30900000, "unit": "people", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01", "note": "90.1% of population" },
+    { "field": "non_citizens", "label": "Non-citizens", "value_num": 3400000, "unit": "people", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01", "note": "9.9% of population" },
+    { "field": "citizens_bumiputera", "label": "Citizens — Bumiputera", "value_num": 70.5, "unit": "pct", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" },
+    { "field": "citizens_chinese", "label": "Citizens — Chinese", "value_num": 22.2, "unit": "pct", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" },
+    { "field": "citizens_indian", "label": "Citizens — Indian", "value_num": 6.5, "unit": "pct", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" },
+    { "field": "citizens_others", "label": "Citizens — Others", "value_num": 0.8, "unit": "pct", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" },
+    { "field": "median_household_income", "label": "Median household income 2024", "value_num": 7017, "unit": "MYR/month", "tag": "public", "source_label": "DOSM HIS 2024", "source_url": "https://www.dosm.gov.my/portal-main/release-content/household-income-survey-report--malaysia--states-2024", "as_of": "2024-12-31" },
+    { "field": "mean_household_income", "label": "Mean household income 2024", "value_num": 9155, "unit": "MYR/month", "tag": "public", "source_label": "DOSM HIS 2024", "source_url": "https://www.dosm.gov.my/portal-main/release-content/household-income-survey-report--malaysia--states-2024", "as_of": "2024-12-31" },
+    { "field": "household_size", "label": "Average household size 2024", "value_num": 3.7, "unit": "people", "tag": "public", "source_label": "DOSM HIS 2024", "source_url": "https://www.dosm.gov.my/portal-main/release-content/household-income-survey-report--malaysia--states-2024", "as_of": "2024-12-31" },
+    { "field": "share_hyper_super", "label": "Shopper share — hyper/supermarkets", "value_num": 47, "unit": "pct", "tag": "estimated", "source_label": "Malaysia4u", "source_url": "https://malaysia4u.com/fmcg-guide" },
+    { "field": "share_convenience", "label": "Shopper share — convenience/mini-markets", "value_num": 24, "unit": "pct", "tag": "estimated", "source_label": "Malaysia4u", "source_url": "https://malaysia4u.com/fmcg-guide" },
+    { "field": "share_traditional", "label": "Shopper share — traditional", "value_num": 14, "unit": "pct", "tag": "estimated", "source_label": "Malaysia4u", "source_url": "https://malaysia4u.com/fmcg-guide" },
+    { "field": "share_online", "label": "Shopper share — online", "value_num": 3, "unit": "pct", "tag": "estimated", "source_label": "Malaysia4u", "source_url": "https://malaysia4u.com/fmcg-guide", "note": "~3%" },
+    { "field": "fnb_establishments_2022", "label": "F&B service establishments (2022)", "value_num": 136453, "unit": "establishments", "tag": "public", "source_label": "NST citing DOSM", "source_url": "https://nst.com.my/amp/business/economy/2024/08/1086989/dosm-136453-fb-services-premises-rm99bil-gross-output-value", "as_of": "2022-12-31" },
+    { "field": "home_care_leaders", "label": "Home care leaders", "value_text": "SC Johnson, Unilever (overall); dishwashing Unilever, Colgate-Palmolive; laundry Kao; surface Kao, SC Johnson; toilet Kao, Clorox; bleach Kuat Harimau", "tag": "public", "source_label": "Euromonitor", "source_url": "https://www.euromonitor.com/home-care-in-malaysia/report" },
+    { "field": "hs3402_imports_usd", "label": "Imports HS 3402 (2023)", "value_num": 331700000, "unit": "USD", "tag": "public", "source_label": "TrendEconomy (UN Comtrade)", "source_url": "https://trendeconomy.com/data/h2/Malaysia/3402", "as_of": "2023-12-31" },
+    { "field": "hs3402_imports_yoy", "label": "HS 3402 imports change vs 2022", "value_num": -17, "unit": "pct", "tag": "public", "source_label": "TrendEconomy (UN Comtrade)", "source_url": "https://trendeconomy.com/data/h2/Malaysia/3402", "as_of": "2023-12-31" },
+    { "field": "hs3402_share_cn", "label": "HS 3402 import share — China", "value_num": 22, "unit": "pct", "tag": "public", "source_label": "TrendEconomy (UN Comtrade)", "source_url": "https://trendeconomy.com/data/h2/Malaysia/3402", "as_of": "2023-12-31" },
+    { "field": "hs3402_share_id", "label": "HS 3402 import share — Indonesia", "value_num": 19.1, "unit": "pct", "tag": "public", "source_label": "TrendEconomy (UN Comtrade)", "source_url": "https://trendeconomy.com/data/h2/Malaysia/3402", "as_of": "2023-12-31" },
+    { "field": "hs3402_share_sg", "label": "HS 3402 import share — Singapore", "value_num": 12.1, "unit": "pct", "tag": "public", "source_label": "TrendEconomy (UN Comtrade)", "source_url": "https://trendeconomy.com/data/h2/Malaysia/3402", "as_of": "2023-12-31" },
+    { "field": "hs3402_share_th", "label": "HS 3402 import share — Thailand", "value_num": 7.4, "unit": "pct", "tag": "public", "source_label": "TrendEconomy (UN Comtrade)", "source_url": "https://trendeconomy.com/data/h2/Malaysia/3402", "as_of": "2023-12-31" },
+    { "field": "hs3402_share_vn", "label": "HS 3402 import share — Vietnam", "value_num": 7.2, "unit": "pct", "tag": "public", "source_label": "TrendEconomy (UN Comtrade)", "source_url": "https://trendeconomy.com/data/h2/Malaysia/3402", "as_of": "2023-12-31" },
+    { "field": "duty_tax_basis", "label": "Duty/tax basis", "value_text": "Duty = CIF × rate; sales tax = (CIF + duty) × rate", "tag": "public", "source_label": "DNE Logistics", "source_url": "https://dnelogistics.com.my/malaysia-import-duty-sst-calculator-2026.html" },
+    { "field": "import_tax_rate", "label": "Sales tax at import (cleaning products)", "value_num": 10, "unit": "pct", "tag": "estimated", "source_label": "MOF", "source_url": "https://www.mof.gov.my/portal/en/news/press-release/targeted-revision-of-sales-tax-rate-and-expansion-of-service-tax-scope-effective-1-july-2025", "as_of": "2025-07-01", "note": "5% or 10% on non-essential goods since 1 Jul 2025; seeded 10% for cleaning products." },
+    { "field": "import_tax_recoverable", "label": "Sales tax recoverable", "value_num": 0, "unit": "flag", "tag": "estimated", "note": "Malaysian sales tax treated as a cost by default (spec §8.1)." },
+    { "field": "sales_tax_rate", "label": "Tax added on shelf price", "value_num": 0, "unit": "pct", "tag": "estimated", "note": "Sales tax is single-stage, charged at import/manufacture, so it sits in landed cost rather than on top of the shelf price." },
+    { "field": "distributor_margin", "label": "Distributor gross margin", "value_num": 8, "unit": "pct", "tag": "estimated", "source_label": "BeatRoute", "source_url": "https://beatroute.io/resources/blog/distributor-margin-what-it-is-why-it-matters-for-retail-brands/", "note": "Range 5–12%." },
+    { "field": "distributor_incentive", "label": "Distributor incentive", "value_num": 2, "unit": "pct", "tag": "estimated", "source_label": "Myanmar terms sheet", "note": "Range 1–3%." },
+    { "field": "distributor_credit_days", "label": "Distributor credit", "value_num": 21, "unit": "days", "tag": "estimated", "source_label": "Myanmar terms sheet", "note": "Range 7–21 days." },
+    { "field": "retailer_margin", "label": "Retailer margin", "value_num": 30, "unit": "pct", "tag": "placeholder", "note": "None — replace with chain quote." },
+    { "field": "receivable_days", "label": "Chain payment terms", "value_num": 60, "unit": "days", "tag": "placeholder", "source_label": "Malaysia4u", "note": "\"Can stretch to months\"." },
+    { "field": "listing_fee_total", "label": "Listing fee per SKU", "value_num": null, "unit": "MYR", "tag": "placeholder", "note": "To quote (NSK, one hypermarket)." },
+    { "field": "freight_per_unit", "label": "Freight/3PL SG → Klang Valley / Johor Bahru", "value_num": null, "unit": "MYR/unit", "tag": "placeholder", "note": "To quote." },
+    { "field": "insurance_per_unit", "label": "Insurance", "value_num": 0.02, "unit": "MYR/unit", "tag": "placeholder" },
+    { "field": "clearance_per_unit", "label": "Clearance (broker, permits)", "value_num": 0.1, "unit": "MYR/unit", "tag": "placeholder" },
+    { "field": "origin_handling_per_unit", "label": "Origin handling (SG)", "value_num": 0.05, "unit": "SGD/unit", "tag": "placeholder" },
+    { "field": "stock_days", "label": "Stock days", "value_num": 60, "unit": "days", "tag": "placeholder" },
+    { "field": "pallet_cost_per_day", "label": "3PL pallet storage", "value_num": 2.5, "unit": "MYR/pallet/day", "tag": "placeholder" },
+    { "field": "handling_per_order", "label": "Pick & pack per order", "value_num": 20, "unit": "MYR/order", "tag": "placeholder" },
+    { "field": "units_per_order", "label": "Units per order", "value_num": 96, "unit": "units", "tag": "placeholder" },
+    { "field": "delivery_cost_per_drop", "label": "Delivery per drop", "value_num": 180, "unit": "MYR/drop", "tag": "placeholder" },
+    { "field": "units_per_drop", "label": "Units per drop", "value_num": 240, "unit": "units", "tag": "placeholder" },
+    { "field": "marketing_per_unit", "label": "Marketing per unit", "value_num": 0.3, "unit": "MYR/unit", "tag": "placeholder" },
+    { "field": "payable_days", "label": "Days to pay principal", "value_num": 30, "unit": "days", "tag": "placeholder" },
+    { "field": "fixed_monthly_cost", "label": "Fixed monthly cost per channel", "value_num": 4000, "unit": "MYR/month", "tag": "placeholder" }
+  ],
+  "areas": [
+    { "key": "selangor", "name": "Selangor", "values": [
+      { "field": "population", "label": "Selangor population", "value_num": 7400000, "unit": "people", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" },
+      { "field": "households", "label": "Selangor households", "value_num": 2130000, "unit": "households", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" } ] },
+    { "key": "johor", "name": "Johor", "values": [
+      { "field": "population", "label": "Johor population", "value_num": 4200000, "unit": "people", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" },
+      { "field": "households", "label": "Johor households", "value_num": 1160000, "unit": "households", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" } ] },
+    { "key": "kl", "name": "Kuala Lumpur", "values": [
+      { "field": "population", "label": "Kuala Lumpur population", "value_num": 2100000, "unit": "people", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" },
+      { "field": "households", "label": "Kuala Lumpur households", "value_num": 666200, "unit": "households", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" } ] },
+    { "key": "penang", "name": "Penang", "values": [
+      { "field": "population", "label": "Penang population", "value_num": 1800000, "unit": "people", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" },
+      { "field": "households", "label": "Penang households", "value_num": 557900, "unit": "households", "tag": "public", "source_label": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" } ] }
+  ],
+  "segments": [
+    { "key": "convenience", "outlet_type": "Convenience / mini-markets", "values": [] },
+    { "key": "wholesale_retail", "outlet_type": "Wholesale + retail (cash & carry)", "values": [] },
+    { "key": "food_services", "outlet_type": "F&B — food services", "values": [{ "field": "outlet_count", "label": "Food services (2022)", "value_num": 107129, "unit": "outlets", "tag": "public", "source_label": "NST citing DOSM", "source_url": "https://nst.com.my/amp/business/economy/2024/08/1086989/dosm-136453-fb-services-premises-rm99bil-gross-output-value", "as_of": "2022-12-31" }] },
+    { "key": "event_catering", "outlet_type": "F&B — event catering", "values": [{ "field": "outlet_count", "label": "Event catering (2022)", "value_num": 16208, "unit": "outlets", "tag": "public", "source_label": "NST citing DOSM", "source_url": "https://nst.com.my/amp/business/economy/2024/08/1086989/dosm-136453-fb-services-premises-rm99bil-gross-output-value", "as_of": "2022-12-31" }] },
+    { "key": "beverage", "outlet_type": "F&B — beverage", "values": [{ "field": "outlet_count", "label": "Beverage (2022)", "value_num": 13116, "unit": "outlets", "tag": "public", "source_label": "NST citing DOSM", "source_url": "https://nst.com.my/amp/business/economy/2024/08/1086989/dosm-136453-fb-services-premises-rm99bil-gross-output-value", "as_of": "2022-12-31" }] },
+    { "key": "hotels_offices", "outlet_type": "Hotels / offices / contractors / hospitals", "values": [{ "field": "outlet_count", "label": "Segment size", "value_num": null, "unit": "outlets", "tag": "placeholder", "note": "Open question — size these segments." }] }
+  ],
+  "channels": [
+    { "key": "nsk", "name": "NSK Trade City", "channel_type": "wholesale", "segments": ["wholesale_retail"], "distributor_tier": false, "delivery_mode": "To confirm",
+      "notes": "Wholesale + retail. Open questions: outlet count, wholesale vs retail split, terms, delivery model, whether NSK can act as importer of record, exclusivity expectations.",
+      "values": [
+        { "field": "outlet_count_2020", "label": "NSK outlets (by end-2020)", "value_num": 30, "unit": "outlets", "tag": "estimated", "source_label": "Wikipedia", "source_url": "https://en.wikipedia.org/wiki/NSK_Trade_City", "as_of": "2020-12-31", "note": "Conflicts with the 2024 ranking (17). Kept both — owner to confirm which is current." },
+        { "field": "outlet_count_2024", "label": "NSK outlets (2024 ranking)", "value_num": 17, "unit": "outlets", "tag": "estimated", "source_label": "GourmetPro", "source_url": "https://gourmetpro.co/blog/biggest-supermarkets-malaysia", "as_of": "2024-12-31", "note": "Conflicts with Wikipedia (30 by end-2020). Owner to confirm." }
+      ],
+      "terms": [] },
+    { "key": "speedmart", "name": "99 Speed Mart", "channel_type": "retail_chain", "segments": ["convenience"], "distributor_tier": true, "delivery_mode": "Via distributor — to confirm",
+      "notes": "Runs 99 Bulksales for bulk/corporate buyers.",
+      "values": [
+        { "field": "outlet_count", "label": "99 Speed Mart outlets (30 Jun 2026)", "value_num": 3151, "unit": "outlets", "tag": "public", "source_label": "99 Speed Mart Q2 FY2026", "source_url": "https://99speedmart.com.my/wp-content/uploads/2026/08/Press-Release-Second-Quarter-Results-FY2026_260819_185354-1.pdf", "as_of": "2026-06-30" },
+        { "field": "quarter_revenue", "label": "Revenue Apr–Jun 2026", "value_num": 3080000000, "unit": "MYR", "tag": "public", "source_label": "99 Speed Mart Q2 FY2026", "source_url": "https://99speedmart.com.my/wp-content/uploads/2026/08/Press-Release-Second-Quarter-Results-FY2026_260819_185354-1.pdf", "as_of": "2026-06-30" }
+      ],
+      "terms": [] }
+  ],
+  "trade_rules": [
+    { "hs_code": "3402.90", "origin_iso2": null, "regime": "MFN", "coo_form": null, "duty_pct": 0, "tag": "estimated", "source": "Treayo", "source_url": "https://treayo.com/en/compare/340290", "note": "Confirm per SKU in Customs HS Explorer." },
+    { "hs_code": "3402.90", "origin_iso2": "CN", "regime": "ACFTA", "coo_form": "Form E", "duty_pct": 0, "tag": "estimated", "source": "Treayo", "source_url": "https://treayo.com/en/compare/340290", "note": "0% with Form E — confirm per SKU." },
+    { "hs_code": "3402.90", "origin_iso2": null, "regime": "RCEP", "coo_form": "RCEP CoO", "duty_pct": 0, "tag": "estimated", "source": "Treayo", "source_url": "https://treayo.com/en/compare/340290", "note": "Spec lists 'ACFTA/RCEP 0% with Form E' — confirm form and rate per SKU." }
+  ],
+  "compliance_gates": [
+    { "requirement": "Labelling (marking of pre-packaged goods)", "detail": "Goods name, net quantity, importer/maker name and address; Bahasa Malaysia or English for imports; since 1 Sep 2023.", "authority": "KPDN", "tag": "public", "source": "SGS", "source_url": "https://www.sgs.com/en/news/2023/10/safeguards-13823-malaysia-publishes-order-on-marking-of-pre-packaged-goods" },
+    { "requirement": "CLASS Regulations 2013", "detail": "Workplace chemicals need GHS labels and SDS; ≥1 t/yr hazardous imports → inventory by 31 Mar; likely applies to B2B 5L/20L packs — confirm.", "authority": "DOSH", "tag": "estimated", "source": "ChemSafetyPro", "source_url": "https://chemsafetypro.com/Topics/Malaysia/Malaysia_CLASS_Regulations_GHS.html" },
+    { "requirement": "Halal certification", "detail": "Voluntary; JAKIM certifies consumer goods.", "authority": "JAKIM", "tag": "public", "source": "Emerhub", "source_url": "https://emerhub.com/malaysia/how-to-get-halal-certificate-in-malaysia/" },
+    { "requirement": "WRT licence (own entry)", "detail": "Needed if >50% foreign-owned in wholesale/retail/import trade; RM1m min. paid-up capital; ~2–3 months; prerequisite for Employment Passes; not needed if 51% Malaysian-owned.", "authority": "KPDN", "tag": "public", "source": "Emerhub (updated 26 May 2026)", "source_url": "https://emerhub.com/malaysia/wrt-license-malaysia/" },
+    { "requirement": "Disinfectant claims", "detail": "May need extra registration — not yet checked.", "authority": null, "tag": "placeholder", "source": null }
+  ],
+  "competitors": [],
+  "partners": [],
+  "evidence": [
+    { "statement": "Population 34.2 million (2025 prelim.), growing 0.5% a year", "value": "34.2m", "tag": "public", "source": "DOSM", "source_url": "https://storage.dosm.gov.my/demography/population_2025.pdf", "as_of": "2025-07-01" },
+    { "statement": "Median household income RM7,017 per month (2024)", "value": "RM7,017", "tag": "public", "source": "DOSM HIS 2024", "source_url": "https://www.dosm.gov.my/portal-main/release-content/household-income-survey-report--malaysia--states-2024", "as_of": "2024-12-31" },
+    { "statement": "99 Speed Mart operates 3,151 outlets (30 Jun 2026)", "value": "3,151", "tag": "public", "source": "99 Speed Mart Q2 FY2026", "source_url": "https://99speedmart.com.my/wp-content/uploads/2026/08/Press-Release-Second-Quarter-Results-FY2026_260819_185354-1.pdf", "as_of": "2026-06-30" },
+    { "statement": "136,453 F&B service establishments (2022)", "value": "136,453", "tag": "public", "source": "NST citing DOSM", "source_url": "https://nst.com.my/amp/business/economy/2024/08/1086989/dosm-136453-fb-services-premises-rm99bil-gross-output-value", "as_of": "2022-12-31" },
+    { "statement": "Malaysia imported US$331.7m of HS 3402 (detergents) in 2023; Singapore supplied 12.1%", "value": "US$331.7m", "tag": "public", "source": "TrendEconomy (UN Comtrade)", "source_url": "https://trendeconomy.com/data/h2/Malaysia/3402", "as_of": "2023-12-31" }
+  ],
+  "tracker": {
+    "principal": "sg_keon",
+    "statuses": {
+      "Seed numbers reviewed": "done",
+      "Tariff line and import tax confirmed per SKU": "in_progress",
+      "Licence and foreign-ownership blockers checked": "in_progress",
+      "Market scorecard filled": "not_started",
+      "Competitor cards written (with \"how we win\")": "in_progress",
+      "Certifications planned (e.g. halal)": "in_progress"
+    },
+    "notes": {
+      "Tariff line and import tax confirmed per SKU": "Open question: confirm tariffs/SST per SKU.",
+      "Certifications planned (e.g. halal)": "Halal certification in progress."
+    },
+    "extra_items": [
+      { "stage_no": 3, "item": "NSK discussion", "required": false, "status": "in_progress", "note": "Outlet count, wholesale vs retail split, terms (margin, listing fees, rebates, payment days, returns), delivery model, can NSK act as importer of record, exclusivity expectations." },
+      { "stage_no": 2, "item": "Open question: NSK outlet count (30 in 2020 vs 17 in 2024 ranking)", "required": false, "status": "not_started" },
+      { "stage_no": 2, "item": "Open question: Mydin / Lotus's / AEON store counts", "required": false, "status": "not_started" },
+      { "stage_no": 2, "item": "Open question: hotel / office / contractor / hospital segment sizes", "required": false, "status": "not_started" },
+      { "stage_no": 3, "item": "Open question: NSK wholesale vs retail split", "required": false, "status": "not_started" },
+      { "stage_no": 3, "item": "Open question: NSK terms — margin, listing fees, rebates, payment days, returns", "required": false, "status": "not_started" },
+      { "stage_no": 3, "item": "Open question: NSK delivery model", "required": false, "status": "not_started" },
+      { "stage_no": 3, "item": "Open question: can NSK act as importer of record?", "required": false, "status": "not_started" },
+      { "stage_no": 3, "item": "Open question: NSK exclusivity expectations", "required": false, "status": "not_started" },
+      { "stage_no": 3, "item": "Open question: two distributor quotes", "required": false, "status": "not_started" },
+      { "stage_no": 3, "item": "Open question: freight and 3PL quotes (SG → Klang Valley / Johor Bahru)", "required": false, "status": "not_started" },
+      { "stage_no": 4, "item": "Open question: CLASS applicability to B2B 5L/20L packs", "required": false, "status": "not_started" },
+      { "stage_no": 4, "item": "Open question: disinfectant claim rules", "required": false, "status": "not_started" }
+    ]
+  }
+}

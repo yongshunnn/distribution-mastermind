@@ -1,0 +1,35 @@
+{
+  "key": "sg_keon",
+  "principal": { "name": "SG KEON", "country": "SG", "contact": null, "contract_type": null, "territories": ["SG", "MY", "MM"], "status": "active",
+    "notes": "First principal loaded. Contract type and fee model to confirm. Product data below is placeholder until the owner uploads the SKU list." },
+  "brand": { "name": "SG KEON", "origin_claim": "International manufacturing", "story": "Enzyme-formula dishwashing liquid with international manufacturing credibility (from the Myanmar market-entry analysis). Replace with the principal's own brand story." },
+  "sites": [
+    { "name": "SG KEON production (location to confirm)", "country": "SG", "lat": 1.3521, "lng": 103.8198, "lead_time_days": 14, "incoterm": "EXW", "currency": "SGD", "moq": "To confirm", "capacity": "To confirm" }
+  ],
+  "families": [
+    { "key": "dw", "name": "Dishwashing liquid", "category": "dishwashing", "base_formulation": "Enzyme formula", "certifications": [], "hs_code": "3402.90",
+      "skus": [
+        { "sku_code": "KEON-DW-500", "name": "Dishwashing liquid 500ml", "variant_attrs": { "size_ml": 500, "scent": "Lemon" }, "shelf_life_days": 730,
+          "packs": [ { "level": "each", "units_per_level": 1, "l_cm": 7, "w_cm": 5, "h_cm": 20, "gross_kg": 0.55 }, { "level": "carton", "units_per_level": 24, "l_cm": 36, "w_cm": 26, "h_cm": 22, "gross_kg": 13.5 }, { "level": "pallet", "units_per_level": 1440 } ],
+          "supplier_price": 0.85 },
+        { "sku_code": "KEON-DW-1L", "name": "Dishwashing liquid 1L", "variant_attrs": { "size_ml": 1000, "scent": "Lemon" }, "shelf_life_days": 730,
+          "packs": [ { "level": "each", "units_per_level": 1, "l_cm": 9, "w_cm": 6, "h_cm": 25, "gross_kg": 1.08 }, { "level": "carton", "units_per_level": 12, "l_cm": 37, "w_cm": 28, "h_cm": 27, "gross_kg": 13.2 }, { "level": "pallet", "units_per_level": 720 } ],
+          "supplier_price": 1.4 },
+        { "sku_code": "KEON-DW-5L", "name": "Dishwashing liquid 5L (B2B)", "variant_attrs": { "size_ml": 5000, "scent": "Lemon" }, "shelf_life_days": 730,
+          "packs": [ { "level": "each", "units_per_level": 1, "l_cm": 19, "w_cm": 13, "h_cm": 30, "gross_kg": 5.3 }, { "level": "carton", "units_per_level": 4, "l_cm": 40, "w_cm": 28, "h_cm": 32, "gross_kg": 21.5 }, { "level": "pallet", "units_per_level": 160 } ],
+          "supplier_price": 5.2 }
+      ] }
+  ],
+  "plays": [
+    { "key": "fortune_1l", "name": "Fortune · 1L", "sku": "KEON-DW-1L", "market": "SG", "channel": "fortune", "segment": "supermarkets", "route_type": "retail_chain", "status": "active",
+      "shelf_price": 3.5, "q_realistic_month": 1500, "entry_cost": 3000 },
+    { "key": "prime_1l", "name": "Prime · 1L", "sku": "KEON-DW-1L", "market": "SG", "channel": "prime", "segment": "supermarkets", "route_type": "retail_chain", "status": "active",
+      "shelf_price": 3.5, "q_realistic_month": 1000, "entry_cost": 2500 },
+    { "key": "foodmax_5l", "name": "FoodMax · 5L", "sku": "KEON-DW-5L", "market": "SG", "channel": "foodmax", "segment": "food_shops", "route_type": "b2b_platform", "status": "active",
+      "shelf_price": 12.9, "q_realistic_month": 800, "entry_cost": 500 },
+    { "key": "nsk_1l", "name": "NSK Trade City · 1L", "sku": "KEON-DW-1L", "market": "MY", "channel": "nsk", "segment": "wholesale_retail", "route_type": "retail_chain", "status": "draft",
+      "shelf_price": 8.9, "q_realistic_month": 1200, "entry_cost": 8000 },
+    { "key": "speedmart_500", "name": "99 Speed Mart · 500ml via distributor", "sku": "KEON-DW-500", "market": "MY", "channel": "speedmart", "segment": "convenience", "route_type": "distributor", "status": "draft",
+      "shelf_price": 4.9, "q_realistic_month": 3000, "entry_cost": 15000 }
+  ]
+}
