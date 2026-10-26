@@ -4,6 +4,7 @@ import { Num } from '@/components/num';
 import { portfolio } from '@/lib/db/portfolio';
 import { rows, tracedFromValue, valueIndex } from '@/lib/db/data';
 import { STAGE_NAMES, STATUS_LABEL } from '@/lib/stages';
+import { StarterDataButton } from '@/components/starter-data';
 
 export const metadata = { title: 'Home' };
 
@@ -19,6 +20,14 @@ export default async function HomePage() {
     if (entityType === 'channel_terms') return channels.find((c) => c.id === terms.find((t) => t.id === id)?.channel_id)?.market_id;
     return undefined;
   };
+  if (!markets.length) {
+    return (
+      <div className="space-y-4">
+        <PageHeader title="Portfolio" subtitle="One-glance state of every play, market and principal." />
+        <StarterDataButton />
+      </div>
+    );
+  }
   const maxMarket = Math.max(1, ...p.byMarket.map((m) => Math.abs(m.t.value)));
   const stages = [1, 2, 3, 4, 5, 6, 7, 8];
 
