@@ -33,6 +33,7 @@ export function SupplyChainView({ branches }: { branches: Branch[] }) {
   const [canWebgl, setCanWebgl] = useState(true);
   const [reducedMotion, setReducedMotion] = useState(false);
   const [unit, setUnit] = useState<UnitMode>('unit');
+  const [showPrices, setShowPrices] = useState(true);
   const [compare, setCompare] = useState<string[]>([]);
   const [sliders, setSliders] = useState<SliderState>({});
   const [selected, setSelected] = useState<Traced | null>(null);
@@ -70,6 +71,12 @@ export function SupplyChainView({ branches }: { branches: Branch[] }) {
             <option value="m3">per m³</option>
           </select>
         </label>
+        {mode === '3d' ? (
+          <label className="flex min-h-11 items-center gap-2 text-sm">
+            <input type="checkbox" className="size-5" checked={showPrices} onChange={(e) => setShowPrices(e.target.checked)} />
+            Show prices
+          </label>
+        ) : null}
         {!canWebgl ? <span className="text-xs text-muted-foreground">WebGL unavailable — showing 2D.</span> : null}
       </div>
 
@@ -96,7 +103,7 @@ export function SupplyChainView({ branches }: { branches: Branch[] }) {
 
       {mode === '3d' ? (
         <div className="h-[60vh] min-h-80 overflow-hidden rounded-xl border border-border bg-card" aria-label="3D supply chain. Tap a layer, tube or footprint for its explanation. The same values are listed below.">
-          <ChainScene models={models} onSelect={setSelected} reducedMotion={reducedMotion} />
+          <ChainScene models={models} onSelect={setSelected} reducedMotion={reducedMotion} showPrices={showPrices} />
         </div>
       ) : null}
 

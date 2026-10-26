@@ -18,6 +18,8 @@ export interface BranchModel {
   C: Traced;
   /** Per-stage total of the layers added there (what tapping a mockup shows). */
   stageTotals: Partial<Record<ChainStage, Traced>>;
+  /** Running price of one unit once each stage is done — the label on top of each column. */
+  cumulative: Partial<Record<ChainStage, Traced>>;
 }
 
 function scaleFactor(b: Branch, mode: UnitMode): Traced | null {
@@ -54,9 +56,21 @@ export function modelBranch(b: Branch, s: SliderState, mode: UnitMode): BranchMo
       ? sum(`stage_${stage}`, parts[0].unit, parts, { label: `${stage} — added at this stage`, meaning: `Everything added to the price of one unit at the ${stage.toLowerCase()} stage of the ${b.channel} route.` })
       : leaf(`stage_${stage}`, 0, `${cur}${UNIT_SUFFIX[mode]}`, { tag: 'computed', label: `${stage} — added at this stage`, meaning: 'Nothing is added to the unit price at this stage for this route.' });
   }
+  const cumulative: Partial<Record<ChainStage, Traced>> = {};
+  CHAIN_STAGES.forEach((stage, si) => {
+    const parts = CHAIN_STAGES.slice(0, si + 1).map((st) => stageTotals[st]!).filter((t) => t.value !== 0);
+    cumulative[stage] = sum(`price_after_${si}`, `${cur}${UNIT_SUFFIX[mode]}`, parts, {
+      label: `Price level after ${stage.toLowerCase()} — ${b.channel}`,
+      meaning:
+        stage === 'Consumer'
+          ? 'What the consumer pays for one unit: the shelf price, including tax.'
+          : `What one unit has cost (or is priced at) once the ${stage.toLowerCase()} stage is done — every layer added so far.`,
+    });
+  });
   return {
     branch: b,
     stageTotals,
+    cumulative,
     layers,
     volume: i.q_realistic_month,
     stock: i.stock_days,

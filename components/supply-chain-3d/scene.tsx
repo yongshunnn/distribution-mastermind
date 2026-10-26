@@ -10,6 +10,7 @@ import { CHAIN_STAGES } from '@/lib/calc/play';
 import type { Traced } from '@/lib/calc/traced';
 import { LAYER_HEX, stack } from '@/lib/layers';
 import type { BranchModel } from './compute';
+import { Num } from '../num';
 
 const DX = 2.2;
 const DZ = 2.6;
@@ -61,7 +62,7 @@ const pointer = {
  * Each stage shows a column of stacked per-unit cost layers rising like a staircase to the shelf price;
  * the newest layers are solid, earlier ones faded. Green = contribution, red cap = loss.
  */
-export default function ChainScene({ models, onSelect, reducedMotion }: { models: BranchModel[]; onSelect: (t: Traced) => void; reducedMotion: boolean }) {
+export default function ChainScene({ models, onSelect, reducedMotion, showPrices = true }: { models: BranchModel[]; onSelect: (t: Traced) => void; reducedMotion: boolean; showPrices?: boolean }) {
   const maxTop = useMemo(() => Math.max(1e-9, ...models.map((m) => stack(m.layers).reduce((mx, s) => Math.max(mx, s.top), 0))), [models]);
   const maxQ = Math.max(1, ...models.map((m) => m.volume.value));
   const maxStock = Math.max(1, ...models.map((m) => m.stock.value));
@@ -134,6 +135,30 @@ export default function ChainScene({ models, onSelect, reducedMotion }: { models
               <boxGeometry args={[foot, 0.02, foot]} />
               <meshStandardMaterial color="#d98a00" transparent opacity={0.35} />
             </mesh>
+            {showPrices
+              ? CHAIN_STAGES.map((stage, si) => {
+                  const upto = stacked.filter((s) => CHAIN_STAGES.indexOf(s.layer.stage) <= si);
+                  const top = upto.reduce((mx, s) => Math.max(mx, s.top), 0);
+                  const price = m.cumulative[stage];
+                  const contribution = stage === 'Channel' ? m.C : null;
+                  if (!price) return null;
+                  return (
+                    <Html key={`price-${stage}`} zIndexRange={[20, 0]} position={[x0 + si * DX, h(top) + 0.3, z]} center distanceFactor={10}>
+                      <div className="flex flex-col items-center gap-0.5" data-testid="chain-price">
+                        <span className="rounded-md border border-border bg-card/95 px-1 text-[11px] leading-tight whitespace-nowrap shadow-sm">
+                          <Num t={price} />
+                        </span>
+                        {contribution ? (
+                          <span className={`rounded-md px-1 text-[10px] leading-tight whitespace-nowrap ${contribution.value < 0 ? 'bg-danger-bg text-danger' : 'bg-ok-bg text-ok'}`}>
+                            {contribution.value < 0 ? 'loss ' : 'margin '}
+                            <Num t={contribution} />
+                          </span>
+                        ) : null}
+                      </div>
+                    </Html>
+                  );
+                })
+              : null}
             {CHAIN_STAGES.map((stage, si) => (
               <group
                 key={`model-${stage}`}
